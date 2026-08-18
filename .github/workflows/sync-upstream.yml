@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout fork
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
           ref: main
@@ -46,7 +46,7 @@ jobs:
 
       - name: Set up Node.js
         if: steps.merge.outputs.changed == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "24"
           cache: npm
@@ -65,4 +65,4 @@ jobs:
       - name: Push update
         if: steps.merge.outputs.changed == 'true'
         run: git push origin main
- 
+
